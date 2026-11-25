@@ -20,7 +20,6 @@ def compute_iou(pred: np.ndarray, target: np.ndarray, num_classes: int) -> dict[
         Dict with per-class IoU and mIoU.
     """
     ious: dict[str, float] = {}
-    valid_classes = 0
 
     for cls in range(num_classes):
         pred_cls = pred == cls
@@ -32,7 +31,6 @@ def compute_iou(pred: np.ndarray, target: np.ndarray, num_classes: int) -> dict[
         if union > 0:
             iou = float(intersection / union)
             ious[f"iou_class_{cls}"] = iou
-            valid_classes += 1
         else:
             ious[f"iou_class_{cls}"] = float("nan")
 

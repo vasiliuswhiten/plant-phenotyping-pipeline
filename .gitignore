@@ -22,7 +22,7 @@ env/
 .ipynb_checkpoints/
 
 # Data (DVC-managed)
-data/
+/data/
 results/**/*.pt
 results/**/*.ckpt
 results/**/*.onnx
@@ -32,7 +32,6 @@ results/**/*.engine
 mlruns/
 
 # DVC
-/data
 *.dvc.lock
 
 # OS

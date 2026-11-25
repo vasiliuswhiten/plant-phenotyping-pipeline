@@ -69,7 +69,7 @@ def compute_detection_metrics(
         best_iou = 0.0
         best_gt_idx = -1
 
-        for gt_idx, (gt_box, gt_cls) in enumerate(zip(gt_boxes, gt_classes)):
+        for gt_idx, (gt_box, gt_cls) in enumerate(zip(gt_boxes, gt_classes, strict=True)):
             if gt_idx in matched_gt or gt_cls != pred_cls:
                 continue
 

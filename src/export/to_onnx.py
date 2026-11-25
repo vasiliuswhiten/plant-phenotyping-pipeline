@@ -6,7 +6,6 @@ Supports both custom PyTorch models and Ultralytics YOLO models.
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
 
 import torch
 
