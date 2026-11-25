@@ -1,0 +1,17 @@
+# Hyperspectral Object Detection config (WHISPERS)
+# TODO: Implement in Phase 4
+task: hyperspectral_detection
+
+data:
+  name: hyperspectral
+  root: data/hyperspectral
+
+model:
+  name: yolov8s
+  num_classes: 10  # TBD
+
+training:
+  epochs: 100
+  batch_size: 8
+  project: results/hyperspectral
+  name: hsi_det

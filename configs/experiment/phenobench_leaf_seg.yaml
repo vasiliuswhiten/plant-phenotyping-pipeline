@@ -1,0 +1,32 @@
+# PhenoBench Leaf Instance Segmentation experiment config
+task: segmentation
+
+data:
+  name: phenobench
+  root: data/phenobench
+  yaml_path: data/phenobench/data.yaml
+  imgsz: 1024
+
+model:
+  name: yolov8s-seg
+  pretrained: true
+  num_classes: 2  # crop, weed
+
+training:
+  epochs: 150
+  batch_size: 4
+  imgsz: 1024
+  optimizer: AdamW
+  lr: 0.001
+  weight_decay: 0.0005
+  project: results/phenobench
+  name: leaf_seg
+
+augmentation:
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  flipud: 0.5
+  fliplr: 0.5
+  mosaic: 1.0
+  mixup: 0.05

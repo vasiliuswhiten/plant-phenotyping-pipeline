@@ -1,0 +1,26 @@
+# AgVision ICPR 2026 Disease Classification config
+# TODO: Implement in Phase 3
+task: classification
+
+data:
+  name: agvision
+  root: data/agvision
+  modalities: [rgb, multispectral, hyperspectral]
+
+model:
+  rgb_backbone: dinov2_vitb14
+  spectral_encoder:
+    num_bands: 224
+    hidden_dim: 128
+    output_dim: 256
+  fusion_dim: 512
+  num_classes: 10  # TBD based on actual dataset
+
+training:
+  epochs: 50
+  batch_size: 32
+  optimizer: AdamW
+  lr: 0.0001
+  weight_decay: 0.01
+  project: results/agvision
+  name: disease_cls

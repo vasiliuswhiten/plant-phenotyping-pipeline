@@ -1,0 +1,9 @@
+# Mask2Former model config for panoptic/instance segmentation
+# TODO: Implement in Phase 1 as advanced baseline
+architecture: mask2former
+
+backbone: swin-t
+hidden_dim: 256
+num_queries: 100
+num_heads: 8
+dec_layers: 6

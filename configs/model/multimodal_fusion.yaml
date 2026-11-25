@@ -1,0 +1,18 @@
+# Multi-modal fusion model config
+# TODO: Implement in Phase 3
+architecture: multimodal_fusion
+
+rgb_backbone: dinov2_vitb14
+spectral_encoder:
+  type: conv1d
+  num_bands: 224
+  hidden_dim: 128
+  output_dim: 256
+
+fusion:
+  type: attention  # or 'concat', 'film'
+  hidden_dim: 512
+
+classifier:
+  hidden_dim: 256
+  dropout: 0.3

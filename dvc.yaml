@@ -1,0 +1,31 @@
+stages:
+  train_plant_det:
+    cmd: python scripts/train.py --config configs/experiment/phenobench_plant_det.yaml
+    deps:
+      - src/models/detector.py
+      - src/data/phenobench.py
+      - configs/experiment/phenobench_plant_det.yaml
+      - data/phenobench
+    outs:
+      - results/phenobench/plant_det:
+          persist: true
+
+  train_leaf_seg:
+    cmd: python scripts/train.py --config configs/experiment/phenobench_leaf_seg.yaml
+    deps:
+      - src/models/segmentor.py
+      - src/data/phenobench.py
+      - configs/experiment/phenobench_leaf_seg.yaml
+      - data/phenobench
+    outs:
+      - results/phenobench/leaf_seg:
+          persist: true
+
+  evaluate:
+    cmd: python scripts/evaluate.py --config configs/experiment/phenobench_plant_det.yaml
+    deps:
+      - src/evaluation/
+      - results/phenobench/plant_det
+    metrics:
+      - results/phenobench/metrics.json:
+          cache: false

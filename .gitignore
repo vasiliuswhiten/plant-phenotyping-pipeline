@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (DVC-managed)
+data/
+results/**/*.pt
+results/**/*.ckpt
+results/**/*.onnx
+results/**/*.engine
+
+# MLflow
+mlruns/
+
+# DVC
+/data
+*.dvc.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.tar
+
+# Secrets
+*.env
+.env.*
+
+# Assets (keep the directory)
+!assets/.gitkeep

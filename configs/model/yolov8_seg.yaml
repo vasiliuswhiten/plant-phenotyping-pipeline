@@ -1,0 +1,11 @@
+# YOLOv8 Segmentation model config
+architecture: yolov8-seg
+
+variants:
+  nano: yolov8n-seg
+  small: yolov8s-seg
+  medium: yolov8m-seg
+  large: yolov8l-seg
+  xlarge: yolov8x-seg
+
+default_variant: small
